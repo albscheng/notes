@@ -117,16 +117,54 @@ empty_dict = {}
 print d['key1']
 dict_name[new_key] = new_value
 del dict_name[key_name]
+print my_dict.items()
+print my_dict.keys()
+print my_dict.values()
 ```
 ## For Loops
 ```
-for variable in list_name:         
+for variable in list_name:
 for number in range(0, 10):
 for index, item in enumerate(list_name):
 for itema, itemb in zip(list_a, list_b):  # stops at end of shorter list
 ```
-##While/Else, For/Else
+## While/Else, For/Else
 else is executed if loop is not entered, or if loop exits normally (not break)
 
+## List Comprehension
+```
+evens_to_50 = [i for i in range(51) if i % 2 == 0]
+cubes_by_four = [c**3 for c in range(1, 11) if c**3 % 4 == 0]
+```
+
+## List Slicing
+#### syntax: [start:end:stride]
+```
+my_list[::-1]       # reverse list with negative stride
+```
+
+Classes
+```
+class Fruit(object):
+    """A class that makes various tasty fruits."""
+    def __init__(self, name, color, flavor, poisonous):
+        self.name = name
+        self.color = color
+        self.flavor = flavor
+        self.poisonous = poisonous
+
+    def description(self):
+        print "I'm a %s %s and I taste %s." % (self.color, self.name, self.flavor)
+
+    def is_edible(self):
+        if not self.poisonous:
+            print "Yep! I'm edible."
+        else:
+            print "Don't eat me! I am super poisonous."
+
+lemon = Fruit("lemon", "yellow", "sour", False)
+lemon.description()
+lemon.is_edible()
+```
 
 
