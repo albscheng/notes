@@ -1,6 +1,8 @@
-Relational database - organizes info in tables (aka relations).
-Columns - data values of the same type.
-Rows - a single record in a table.
+Relational database - organizes info in tables (aka relations)
+
+Columns - data values of the same type
+
+Rows - a single record in a table
 
 ### Creating a table
 ```
