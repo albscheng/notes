@@ -69,3 +69,69 @@ SELECT column_name(s)
 FROM table_name
 WHERE column_name BETWEEN value_1 AND value_2;
 ```
+
+##### Combining conditions
+```
+SELECT column_name(s)
+FROM table_name
+WHERE column_1 = value_1
+AND column_2 = value_2;
+
+SELECT column_name
+FROM table_name
+WHERE column_name = value_1
+OR column_name = value_2;
+```
+
+### Ordering queries
+```
+SELECT column_name
+FROM table_name
+ORDER BY column_name ASC|DESC;
+```
+
+### Limit maximum number of rows for result set
+```
+SELECT column_name(s)
+FROM table_name
+LIMIT number;
+```
+
+### Count how many rows in a table
+```
+SELECT COUNT(*) FROM table_name;
+```
+
+### Arrange identical data into groups
+```
+SELECT COUNT(*)
+FROM table_name
+GROUP BY column_name;
+```
+
+### Add all values in a particular column
+```
+SELECT SUM(column_name) FROM table_name;
+SELECT MAX(column_name) FROM table_name;        // get the maximum
+```
+
+# Multiple Tables
+Primary Key - a unique identifier for each row in a given table (can't be NULL)  
+Foreign Key - a column that contains the primary key for another table in db  
+
+### Joins - Querying multiple tables
+```
+SELECT table_1.col_1, table_1.col_2, table_2.col_1 FROM table_1, table_2;  // cross join
+
+// Combine rows from diff. tables if JOIN cond. is true
+SELECT *
+FROM table_1
+JOIN table_2 ON
+    table_1.foreign_key = table_2.PRIMARY_KEY;      // inner join
+
+// Return every row of left table (table 1) in results set
+SELECT *
+FROM table_1
+LEFT JOIN table_2 ON
+    table_1.foreign_key = table_2.PRIMARY_KEY;      // outer join
+```
