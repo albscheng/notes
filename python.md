@@ -138,8 +138,8 @@ cubes_by_four = [c**3 for c in range(1, 11) if c**3 % 4 == 0]
 ```
 
 ## List Slicing
-#### syntax: [start:end:stride]
 ```
+syntax: [start:end:stride]
 my_list[::-1]       # reverse list with negative stride
 ```
 
