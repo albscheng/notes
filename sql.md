@@ -135,3 +135,39 @@ FROM table_1
 LEFT JOIN table_2 ON
     table_1.foreign_key = table_2.PRIMARY_KEY;      // outer join
 ```
+
+### Table Variables
+Used in the FROM clause
+```
+SELECT S.sID, sName, GPA, A.cName, enrollment
+FROM Student S, College C, Apply A
+WHERE A.sID = S.sID AND A.cName = C.cName;
+
+// Compare every possible pair of students, find students with same GPA
+SELECT S1.sID, S1.sName, S1.GPA, S2.sID, S2.sName, S2.GPA
+FROM Student S1, Student S2
+WHERE S1.GPA = S2.GPA AND S1.sID < S2.sID;
+```
+
+### Set Operators
+```
+SELECT cName as name FROM College
+UNION
+SELECT sName as name FROM Student;
+
+SELECT sID FROM Apply WHERE major = 'CS'
+EXCEPT
+SELECT sID FROM Apply WHERE major = 'EE';
+```
+
+### Having
+```
+// because you can't use aggregate functions with WHERE
+SELECT column_name, aggregate_function(column_name)
+FROM table_name
+WHERE column_name operator value
+GROUP BY column_name
+HAVING aggregate_function(column_name) operator value;
+```
+
+
