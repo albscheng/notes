@@ -139,11 +139,44 @@ set args [list one 2 3 4 five]
 puts $args      # one argument instead of five
 ```
 
+## Expect
+Allows you to manipulate and interact with a process.  
+Expect a pattern, and do something when you see that pattern.  
+Usually used for telnet, ssh.  
+```
+package require Expect
 
+set timeout 5000
+set spawn_id 0
 
+set protocol "telnet"
+set ip 12.345.678.90
+set port 23
 
+set res [spawn $protocol $ip $port]         # spawns a telnet process
 
+if {$res == 0} {                            # spawn did not return anything
+    puts "Error connecting!" 
+    exit
+}
+expect_after {
+    timeout {
+        puts "Got a timeout!"
+        exit
+    }
+    eof {
+        puts "Got an EOF!"
+        exit
+    }
+}
 
+expect "#" {exp_send "\r"}                  # expect a '#' and hit enter
+expect "#" {exp_send "exit\r"}
+
+puts $expect_out(buffer)                   
+
+exit
+```
 
 
 
