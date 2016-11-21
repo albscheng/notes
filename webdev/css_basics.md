@@ -93,3 +93,66 @@ margin-left
 or: margin: TM RM BM LM
 ```
 
+### Padding
+```
+Padding is the space between the border and content
+padding: TP RP BP LP;
+```
+
+### Float
+```
+Positions element, avoiding collision with other floating elements
+float: right
+```
+
+### Clear
+```
+Moves element clear of any floating elements
+clear: right/left/both
+```
+
+### Absolute Positioning
+``` 
+Position relative to an element that doesn't have position: static
+Otherwise, relative to <html>
+```
+
+### Relative Positioning
+```
+Moves from where it would normally be
+position: relative
+```
+
+### Fixed Positioning
+```
+Anchors to page, even with scrolling
+```
+
+### Z-Index
+```
+The higher the z-index, the higher the priority (overlap others)
+```
+
+### Grouping Selectors
+```
+h2, .class1, .class2 {
+    ...
+}
+```
+
+### Shorthand Border
+```
+border: 1px red solid
+```
+
+### Shorthand Font
+```
+font: italic bold 12px/2 courier;
+```
+
+### Shorthand Background
+```
+background: background-color -image -repeat -position
+```
+
+
